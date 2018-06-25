@@ -1,0 +1,77 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+html, body, #root, .wrapper {
+  height: 100%; }
+
+body {
+  margin: 0; }
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.app-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+  overflow: hidden; }
+
+.pane {
+  min-height: 200px;
+  width: 100%; }
+
+header.header {
+  text-align: center;
+  font-family: 'Source Code Pro', monospace;
+  border-bottom: 5px solid #c8c8c8;
+  min-height: 60px;
+  overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  background: #208cff;
+  color: #f0f0f0; }
+
+.editor-wrapper {
+  height: 40%; }
+  @media screen and (orientation: landscape) {
+    .editor-wrapper {
+      display: inline-block;
+      height: 100%;
+      width: 50%; } }
+
+.preview-wrapper {
+  height: 60%; }
+  @media screen and (orientation: landscape) {
+    .preview-wrapper {
+      display: inline-block;
+      height: 100%;
+      width: 50%; } }
+
+#editor {
+  border: none;
+  resize: none;
+  outline: none;
+  border: 5px solid #c8c8c8;
+  border-top: none;
+  height: 100%;
+  background-color: black;
+  color: white; }
+  @media screen and (orientation: landscape) {
+    #editor {
+      border-left: none;
+      border-bottom: none; } }
+
+#preview {
+  padding: 15px;
+  height: 100%;
+  overflow-y: auto;
+  overflow-wrap: break-word;
+  max-height: 100%; }
+
