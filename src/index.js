@@ -39,11 +39,11 @@ class App extends React.Component {
       <div className="container">
         <header><h1>Markdown Previewer</h1></header>
         <main>
-          <div className="window-wrapper">
+          <div className="pane-wrapper">
             <header><span>Editor</span></header>
             <Editor handleChange={this.handleChange} output={this.state.editor}/>
           </div>
-          <div className="window-wrapper">
+          <div className="pane-wrapper">
             <header><span>Preview</span></header>
             <Preview output={this.state.preview}/>
           </div>
