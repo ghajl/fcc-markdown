@@ -2,16 +2,84 @@
   box-sizing: border-box;
 }
 
+html, body, #root, .wrapper {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  flex: 1 0 0;
+  overflow: hidden;
+}
+
+
+
 .pane {
-  border: 1px solid;
   min-height: 200px;
   width: 100%;   
 }
-header {
+
+header.header {
   text-align: center;
+  font-family: 'Source Code Pro', monospace;
+  border-bottom: 5px solid rgba(200, 200, 200, 1);
+  min-height: 60px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: rgba(32, 140, 255, 1);
+  color: rgba(240, 240, 240, 1);
 }
 
-.pane-wrapper {
-  margin-top: 2rem; 
+@mixin pane-landscape {
+  @media screen and (orientation: landscape) {
+    display: inline-block;
+    height: 100%;
+    width: 50%;
+  }
+}
+
+.editor-wrapper {
+  height: 40%;
+  @include pane-landscape;
+}
+
+.preview-wrapper {
+  height: 60%;
+  @include pane-landscape;
+}
+
+
+#editor  {
+  border: none;
+  resize: none;
+  outline: none;
+  border: 5px solid rgba(200, 200, 200, 1);
+  border-top: none;
+  height: 100%;
+  background-color: black;
+  color: white;
+
+  @media screen and (orientation: landscape) {
+    border: {
+      left: none;
+      bottom: none;
+    }
+  }
+}
+
+#preview {
+  padding: 15px;
+  height: 100%;
+  overflow-y: auto;
+  overflow-wrap: break-word;
+  max-height: 100%;
 }
 

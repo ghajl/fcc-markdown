@@ -16,6 +16,7 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "common-tags": "^1.8.0",
     "marked": "^0.4.0"
   },
   "devDependencies": {
