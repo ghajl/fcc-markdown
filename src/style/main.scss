@@ -1,0 +1,20 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.pane {
+  border: 1px solid;
+  min-height: 200px;
+  width: 100%;   
+}
+header {
+  text-align: center;
+}
+
+.window-wrapper {
+  margin-top: 2rem; 
+}
+
+.preview-wrapper {
+  margin-top: 2rem; 
+}
