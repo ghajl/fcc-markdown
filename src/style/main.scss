@@ -20,6 +20,7 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
+  min-height: 300px;
 }
 
 .app-container {
@@ -37,9 +38,8 @@ header.header {
   text-align: center;
   font-family: 'Roboto', sans-serif;
   border-bottom: 5px solid rgba(200, 200, 200, 1);
-  min-height: 60px;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   overflow: hidden;
   font-size: 1.6rem;
   flex-shrink: 0;
@@ -48,6 +48,7 @@ header.header {
   @include mq-large {
     padding-left: 2rem;
     text-align: left;
+
   }
 }
 
