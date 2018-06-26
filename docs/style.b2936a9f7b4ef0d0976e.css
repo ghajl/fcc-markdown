@@ -6,7 +6,8 @@ html, body, #root, .wrapper {
   height: 100%; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  font-size: 62.5%; }
 
 .wrapper {
   display: -webkit-box;
@@ -24,22 +25,31 @@ body {
   overflow: hidden; }
 
 .pane {
-  min-height: 200px;
   width: 100%; }
 
 header.header {
-  padding-left: 2rem;
+  text-align: center;
   font-family: 'Roboto', sans-serif;
   border-bottom: 5px solid #c8c8c8;
   min-height: 60px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   overflow: hidden;
+  font-size: 1.6rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   background: #208cff;
   color: #f0f0f0; }
+  @media (min-width: 600px) {
+    header.header {
+      padding-left: 2rem;
+      text-align: left; } }
 
 .editor-wrapper {
-  height: 40%; }
+  position: relative;
+  height: 40%;
+  z-index: 100;
+  min-height: 200px; }
   @media (min-width: 600px) {
     .editor-wrapper {
       display: inline-block;
@@ -47,7 +57,9 @@ header.header {
       width: 50%; } }
 
 .preview-wrapper {
-  height: 60%; }
+  position: relative;
+  height: 60%;
+  z-index: 50; }
   @media (min-width: 600px) {
     .preview-wrapper {
       display: inline-block;
