@@ -55,7 +55,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="wrapper">
-        <header className="header"><h1>Markdown Previewer</h1></header>
+        <header className="header">Markdown Previewer</header>
         <main className="app-container">
           <div className="editor-wrapper">
             <Editor handleChange={this.handleChange} output={this.state.editor}/>
