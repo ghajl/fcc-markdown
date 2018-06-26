@@ -5,7 +5,7 @@ import {stripIndent} from 'common-tags';
 import './style/main.scss';
 
 const Editor = (props) => {
-  return <textarea id="editor" className="pane" onChange={props.handleChange} value={props.output} autoFocus="true"></textarea>;
+  return <textarea id="editor" className="pane" onChange={props.handleChange} value={props.output}></textarea>;
 }
 
 const Preview = (props) => {

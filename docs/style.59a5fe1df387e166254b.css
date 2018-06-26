@@ -28,8 +28,8 @@ body {
   width: 100%; }
 
 header.header {
-  text-align: center;
-  font-family: 'Source Code Pro', monospace;
+  padding-left: 2rem;
+  font-family: 'Roboto', sans-serif;
   border-bottom: 5px solid #c8c8c8;
   min-height: 60px;
   overflow: hidden;
@@ -40,7 +40,7 @@ header.header {
 
 .editor-wrapper {
   height: 40%; }
-  @media screen and (orientation: landscape) {
+  @media (min-width: 600px) {
     .editor-wrapper {
       display: inline-block;
       height: 100%;
@@ -48,7 +48,7 @@ header.header {
 
 .preview-wrapper {
   height: 60%; }
-  @media screen and (orientation: landscape) {
+  @media (min-width: 600px) {
     .preview-wrapper {
       display: inline-block;
       height: 100%;
@@ -58,20 +58,25 @@ header.header {
   border: none;
   resize: none;
   outline: none;
-  border: 5px solid #c8c8c8;
-  border-top: none;
+  border-bottom: 5px solid #c8c8c8;
   height: 100%;
   background-color: black;
-  color: white; }
-  @media screen and (orientation: landscape) {
+  color: white;
+  font-size: 1.2rem; }
+  @media (min-width: 600px) {
     #editor {
-      border-left: none;
-      border-bottom: none; } }
+      border-right: 5px solid #c8c8c8;
+      border-bottom: none;
+      font-size: 1.4rem; } }
 
 #preview {
   padding: 15px;
   height: 100%;
   overflow-y: auto;
   overflow-wrap: break-word;
-  max-height: 100%; }
+  max-height: 100%;
+  font-size: 1.2rem; }
+  @media (min-width: 600px) {
+    #preview {
+      font-size: 1.4rem; } }
 
