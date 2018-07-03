@@ -4,12 +4,12 @@ import marked from 'marked';
 import {stripIndent} from 'common-tags';
 import './style/main.scss';
 
-const Editor = (props) => {
-  return <textarea id="editor" className="pane" onChange={props.handleChange} value={props.output}></textarea>;
+const Editor = ({...props}) => {
+  return <textarea id="editor" className="pane" {...props}></textarea>;
 }
 
-const Preview = (props) => {
-  return <div id="preview" className="pane" dangerouslySetInnerHTML= {{__html: props.output}}></div>;
+const Preview = ({value, ...props}) => {
+  return <div id="preview" className="pane" dangerouslySetInnerHTML= {{__html: value}}></div>;
 }
 
 class App extends React.Component {
@@ -47,9 +47,9 @@ class App extends React.Component {
   }
 
   handleChange = (event) => {
-    const value = event.target.value;
-    const previewOutput = marked(value);
-    this.setState({editor: value, preview: previewOutput});
+    const input = event.target.value;
+    const previewOutput = marked(input);
+    this.setState({editor: input, preview: previewOutput});
   }
   
   render() {
@@ -58,10 +58,10 @@ class App extends React.Component {
         <header className="header">Markdown Previewer</header>
         <main className="app-container">
           <div className="editor-wrapper">
-            <Editor handleChange={this.handleChange} output={this.state.editor}/>
+            <Editor onChange={this.handleChange} value={this.state.editor}/>
           </div>
           <div className="preview-wrapper">
-            <Preview output={this.state.preview}/>
+            <Preview value={this.state.preview}/>
           </div>
         </main>
       </div>
@@ -72,8 +72,4 @@ class App extends React.Component {
 
 const rootElement = document.getElementById('root');
 
-if (rootElement.hasChildNodes()) {
-  ReactDOM.hydrate(<App />, rootElement);
-} else {
-  ReactDOM.render(<App />, rootElement);
-}
+ReactDOM.hydrate(<App />, rootElement);
